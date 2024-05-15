@@ -31,13 +31,18 @@ export default function ModulePage() {
             <div>
               {parseInt(module) > 1 ? (
                 <a
-                  className="mr-3"
+                  className="mr-3 hover:text-sky-500"
                   href={`/module?moduleNum=${parseInt(module) - 1}`}
                 >
                   Previous
                 </a>
               ) : null}
-              <a href={`/module?moduleNum=${parseInt(module) + 1}`}>Next</a>
+              <a
+                className="hover:text-sky-500"
+                href={`/module?moduleNum=${parseInt(module) + 1}`}
+              >
+                Next
+              </a>
             </div>
           </div>
           <hr className="mx-24 my-5" />
