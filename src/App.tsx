@@ -10,8 +10,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/:moduleNum" element={<ModulePage />} />
-          <Route path="/:moduleNum/:lecNum" element={<LecturePage />} />
+          <Route path="/module" element={<ModulePage />} />
+          <Route path="/lecture" element={<LecturePage />} />
         </Routes>
       </BrowserRouter>
     </div>
