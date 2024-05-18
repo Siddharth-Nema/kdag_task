@@ -1,6 +1,6 @@
 import { modules } from '../data/modules';
 
-export default function Sidebar() {
+export default function Sidebar({ status }: { status: boolean }) {
   function getModules() {
     var list: React.ReactElement[] = [];
     var count: number = 1;
@@ -49,17 +49,20 @@ export default function Sidebar() {
 
     return list;
   }
-
-  return (
+  return status ? (
     <div>
-      <div className="flex h-screen flex-col justify-between border-e bg-white w-64">
+      <div
+        className={`md:flex fixed mt-8 h-screen ${
+          status ? '' : 'hidden'
+        } flex-col justify-between border-e bg-white w-64`}
+      >
         <div className="px-4 py-6">
           <ul className="mt-6 space-y-1">
             {getModules().map((value) => value)}
           </ul>
         </div>
 
-        <div className="sticky inset-x-0 bottom-0 border-t border-gray-100">
+        <div className="sticky inset-x-0  bottom-0 border-t border-gray-100">
           <a
             href="/"
             className="flex items-center gap-2 bg-white p-4 hover:bg-gray-50"
@@ -81,7 +84,7 @@ export default function Sidebar() {
         </div>
       </div>
     </div>
-  );
+  ) : null;
 }
 
 //Simple

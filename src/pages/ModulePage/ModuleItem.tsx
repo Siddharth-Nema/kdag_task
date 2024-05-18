@@ -11,7 +11,7 @@ export default function ModuleItem({
 }) {
   return (
     <a href={`/lecture?moduleNum=${module}&lecNo=${index}`}>
-      <div className=" px-40 py-5">
+      <div className="px-10 md:px-40 py-5">
         <h1 className="text-2xl text-left font-semibold transition hover:text-sky-500">
           {index + 1}. {title}
         </h1>
