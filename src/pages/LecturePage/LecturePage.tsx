@@ -6,7 +6,7 @@ import styles from './LecturePage.module.css';
 
 export default function LecturePage() {
   const [module, setModule] = useState(-1);
-  const [sideBar, setSideBar] = useState(true);
+  const [sideBar, setSideBar] = useState(false);
   const [lecture, setLecture] = useState(-1);
   const queryParameters: URLSearchParams = new URLSearchParams(
     window.location.search
@@ -25,6 +25,7 @@ export default function LecturePage() {
         openSideBar={() => {
           setSideBar(!sideBar);
         }}
+        sidebarStatus={sideBar}
       />
       <div className="flex flex-row text-center">
         <Sidebar status={sideBar} />

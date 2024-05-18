@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   Disclosure,
   Menu,
@@ -19,9 +19,13 @@ function classNames(...classes: string[]) {
 
 export default function TopNavBar({
   openSideBar,
+  sidebarStatus,
 }: {
   openSideBar: () => void;
+  sidebarStatus: boolean;
 }) {
+  const [sidebar, setSideBar] = useState(sidebarStatus);
+
   return (
     <Disclosure as="nav" className="bg-gray-800 fixed w-screen z-10">
       {({ open }) => (
@@ -30,20 +34,21 @@ export default function TopNavBar({
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
-                <DisclosureButton
+                <div
                   onClick={() => {
                     openSideBar();
+                    setSideBar(!sidebarStatus);
                   }}
                   className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 >
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
-                  {open ? (
-                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-                  ) : (
+                  {sidebarStatus ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                   )}
-                </DisclosureButton>
+                </div>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">

@@ -7,7 +7,7 @@ import { LectureRef, modules } from '../../data/modules';
 
 export default function ModulePage() {
   const [module, setModule] = useState('');
-  const [sideBar, setSideBar] = useState(true);
+  const [sideBar, setSideBar] = useState(false);
   const queryParameters: URLSearchParams = new URLSearchParams(
     window.location.search
   );
@@ -22,6 +22,7 @@ export default function ModulePage() {
         openSideBar={() => {
           setSideBar(!sideBar);
         }}
+        sidebarStatus={sideBar}
       />
       <div className="flex flex-row">
         <Sidebar status={sideBar} />
@@ -42,12 +43,14 @@ export default function ModulePage() {
                   Previous
                 </a>
               ) : null}
-              <a
-                className="hover:text-sky-500"
-                href={`/module?moduleNum=${parseInt(module) + 1}`}
-              >
-                Next
-              </a>
+              {parseInt(module) < 5 ? (
+                <a
+                  className="hover:text-sky-500"
+                  href={`/module?moduleNum=${parseInt(module) + 1}`}
+                >
+                  Next
+                </a>
+              ) : null}
             </div>
           </div>
           <hr className="px-10 md:px-24 my-5" />
