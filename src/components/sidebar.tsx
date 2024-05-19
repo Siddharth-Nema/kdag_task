@@ -1,6 +1,19 @@
 import { modules } from '../data/modules';
 
 export default function Sidebar({ status }: { status: boolean }) {
+  var width: number = window.screen.width;
+  var displayCSS = '';
+
+  if (width > 640) {
+    displayCSS = '';
+  } else if (status) {
+    displayCSS = '';
+  } else {
+    displayCSS = 'hidden';
+  }
+
+  console.log(displayCSS);
+
   function getModules() {
     var list: React.ReactElement[] = [];
     var count: number = 1;
@@ -49,12 +62,10 @@ export default function Sidebar({ status }: { status: boolean }) {
 
     return list;
   }
-  return status ? (
+  return displayCSS === '' ? (
     <div>
       <div
-        className={`md:flex fixed mt-8 h-screen ${
-          status ? '' : 'hidden'
-        } flex-col justify-between border-e bg-white w-64`}
+        className={`fixed mt-8 h-screen ${displayCSS} flex-col justify-between border-e bg-white w-64`}
       >
         <div className="px-4 py-6">
           <ul className="mt-6 space-y-1">
