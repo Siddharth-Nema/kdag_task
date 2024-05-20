@@ -27,11 +27,11 @@ export default function TopNavBar({
   const [searchValue, setSearchValue] = useState('');
 
   return (
-    <Disclosure as="nav" className="bg-gray-800 fixed w-screen z-10">
+    <Disclosure as="nav" className="navbar fixed w-screen z-10">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-            <div className="relative flex h-16 items-center justify-between">
+            <div className="relative flex h-20 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
                 <div
@@ -52,7 +52,11 @@ export default function TopNavBar({
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <img className="h-8 w-auto" src={logoImg} alt="KDAG" />
+                  <img
+                    className="h-8 w-auto hidden md:flex"
+                    src={logoImg}
+                    alt="KDAG"
+                  />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
@@ -75,7 +79,7 @@ export default function TopNavBar({
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <div className="max-w-md w-80 ">
+                <div className="max-w-md md:w-80 w-60 ">
                   <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
                     Search
                   </label>

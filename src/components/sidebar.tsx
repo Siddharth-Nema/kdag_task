@@ -63,9 +63,9 @@ export default function Sidebar({ status }: { status: boolean }) {
     return list;
   }
   return displayCSS === '' ? (
-    <div>
+    <div className="sidebar">
       <div
-        className={`fixed mt-8 h-screen ${displayCSS} flex-col justify-between border-e bg-white w-64`}
+        className={`sidebar  fixed mt-10 h-screen ${displayCSS} flex-col justify-between border-e bg-white w-64`}
       >
         <div className="px-4 py-6">
           <ul className="mt-6 space-y-1">
@@ -74,10 +74,7 @@ export default function Sidebar({ status }: { status: boolean }) {
         </div>
 
         <div className="sticky inset-x-0  bottom-0 border-t border-gray-100">
-          <a
-            href="/"
-            className="flex items-center gap-2 bg-white p-4 hover:bg-gray-50"
-          >
+          <a href="/" className="flex items-center gap-2 p-4 hover:bg-gray-50">
             <img
               alt=""
               src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
