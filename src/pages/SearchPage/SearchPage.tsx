@@ -56,8 +56,8 @@ export default function SearchPage() {
               <ModuleItem
                 title={lecture.title}
                 desc={lecture.desc}
-                index={index}
-                module={'1'}
+                index={lecture.index - 1}
+                module={lecture.moduleNo.toString()}
               />
             );
           })}
