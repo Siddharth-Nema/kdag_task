@@ -44,3 +44,12 @@
 .navbar {
   background-color: #180505;
 }
+
+.searchButton {
+  background-color: #dc001a;
+  transition: 0.2s;
+}
+
+.searchButton:hover {
+  background-color: #180505;
+}

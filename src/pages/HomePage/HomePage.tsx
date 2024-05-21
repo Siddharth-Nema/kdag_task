@@ -26,7 +26,7 @@ export default function HomePage() {
     <div className=" text-left font-sans">
       {/* <Sidebar /> */}
       <TopNavBar openSideBar={() => {}} sidebarStatus={false} />
-      <h1 className="text-5xl font-bold pt-20 px-10">Modules</h1>
+      <h1 className="text-5xl font-bold pt-24 px-10">Modules</h1>
       <div className={styles.modulesGrid}>
         {getModules().map((value) => value)}
       </div>
